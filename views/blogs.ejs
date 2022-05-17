@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogList</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Macondo&family=Varela&display=swap" rel="stylesheet">
+</head>
+<style>
+    a{
+        padding: 1.3em 3em;
+ font-size: 10px;
+ text-transform: uppercase;
+ letter-spacing: 2.5px;
+ font-weight: 500;
+ color: #000;
+ background-color: #fff;
+ border: none;
+ border-radius: 45px;
+ box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+ transition: all 0.3s ease 0s;
+ cursor: pointer;
+ outline: none;
+    }
+    .card {
+   background-color:grey;
+  
+}
+.heading{
+    font-size: larger;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+.blog{
+    font-family: 'Macondo', cursive;
+font-family: 'Varela', sans-serif;
+    text-align: center;
+
+}
+
+</style>
+
+<body>
+    <div class="table-data">
+        <h2>Reading blogs using Node.js & MySQL</h2>
+        <% if(data.length!=0){ var i=1; data.forEach(function(result){ %>
+            <div class="card">
+                <div class="heading">
+                    <%=result.author %>
+                </div>
+                <p class="blog">
+                    <%=result.content %>
+                </p>
+                <a href="/blogList/edit/<%=result.id%>">Edit</a>
+                <a href="/blogList/:<%=result.id%>">Delete</a>
+                <hr>
+
+
+                <% i++; }) %>
+                    <% } else{ %>
+
+                        <p>No Data Found</p>
+
+                        <% } %>
+                       
+            </div>
+
+
+           
+
+
+
+           
+    </div>
+</body>
+
+</html>
